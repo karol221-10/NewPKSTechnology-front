@@ -1,0 +1,73 @@
+<form  [formGroup]="form" (ngSubmit)="onSubmit()" >
+  <div class="example-wrapper">
+  <div class="row">
+    <div class=" col-xs-12 col-sm-12 example-col">
+
+      <kendo-textbox-container floatingLabel="Leaving From">
+        <input kendoTextBox formControlName="firs_name" />
+      </kendo-textbox-container>
+    </div>
+
+    <div class=" col-xs-12 col-sm-12 example-col">
+      <kendo-textbox-container floatingLabel="Going To">
+        <input kendoTextBox formControlName="second_name" />
+      </kendo-textbox-container>
+    </div>
+    <div class=" col-xs-12 col-sm-12 example-col">
+      <label>
+        Select Date:
+      <kendo-datepicker
+        required
+        [format]="format"
+        formControlName="checkIn"
+        [min]="min"
+      >
+      </kendo-datepicker>
+      </label>
+    </div>
+    <div class=" col-xs-6 col-sm-6 example-col">
+    <label>
+      Time From:
+      <kendo-timepicker
+        formControlName="from"
+        [min]="min"
+        [max]="max"
+        [format]="'HH:mm'"
+        required
+      ></kendo-timepicker>
+    </label>
+    </div>
+    <div class=" col-xs-6 col-sm-6 example-col">
+      <label>
+        Time To:
+        <kendo-timepicker
+          formControlName="to"
+          [min]="min"
+          [max]="max"
+          [format]="'HH:mm'"
+          required
+        ></kendo-timepicker>
+      </label>
+    </div>
+
+  <div class="col-xs-12 col-sm-12 example-col">
+    <label>
+      Passenger(s):
+    <kendo-numerictextbox
+      formControlName="pas"
+      [min] = '1'
+      [max]="100"
+      [autoCorrect]="true"
+      [format]="'n0'"
+    ></kendo-numerictextbox>
+    </label>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 example-col">
+    <button type="submit" class="btn btn-dark">Search</button>
+  </div>
+</div>
+  </div>
+</form >
+
+
