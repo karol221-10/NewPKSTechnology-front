@@ -8,7 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
-import {SearchFormComponent} from './search-form/search-form.component';
+import {SearchFormComponent} from './main-page/search-form/search-form.component';
+import {SearchService} from './shared/search.service';
+import {HttpClientModule} from '@angular/common/http';
+import {GridModule, SharedModule} from '@progress/kendo-angular-grid';
 
 
 
@@ -29,9 +32,12 @@ import {SearchFormComponent} from './search-form/search-form.component';
     FormsModule,
     InputsModule,
     ReactiveFormsModule,
-    DateInputsModule
+    DateInputsModule,
+    HttpClientModule,
+    SharedModule,
+    GridModule
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormGroup, NgForm, FormControl} from '@angular/forms';
+import {Track} from './track.model';
+import {SearchService} from '../../shared/search.service';
+
 
 @Component({
   selector: 'app-search-form',
@@ -7,20 +10,21 @@ import {FormGroup, NgForm, FormControl} from '@angular/forms';
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
+  @Output() track: EventEmitter<Track[]> = new EventEmitter<Track[]>();
   form: FormGroup;
   public min: Date;
   public max: Date = new Date(2000, 11, 31, 22);
-  public format: any = 'MM/dd/yyyy';
-  constructor() { }
+  public format: any = 'dd/MM/yyyy';
+  constructor(private searchService: SearchService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
-      firs_name: new FormControl(null),
-      second_name: new FormControl(null),
-      checkIn: new FormControl(null),
+      leavingFrom: new FormControl(null),
+      leavingTo: new FormControl(null),
+      data: new FormControl(null),
       from: new FormControl(null),
       to: new FormControl(null),
-      pas: new FormControl(null)
+      passengers: new FormControl(null)
     });
 
     const currentDay = new Date();
@@ -31,7 +35,11 @@ export class SearchFormComponent implements OnInit {
 
 
   onSubmit() {
-    const formData = this.form.value;
+    const formData: Track = this.form.value;
     console.log(formData);
+    this.searchService.getTrack(formData).subscribe((track: Track[]) => {
+      this.track.emit(track);
+      console.log('return', track);
+    });
   }
   }

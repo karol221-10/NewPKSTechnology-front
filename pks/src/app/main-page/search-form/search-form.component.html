@@ -2,16 +2,18 @@
   <div class="example-wrapper">
   <div class="row">
     <div class=" col-xs-12 col-sm-12 example-col">
-
-      <kendo-textbox-container floatingLabel="Leaving From">
-        <input kendoTextBox formControlName="firs_name" />
-      </kendo-textbox-container>
+      <label>
+        Leaving From:
+        <input kendoTextBox formControlName="leavingFrom" required/>
+      </label>
     </div>
 
+
     <div class=" col-xs-12 col-sm-12 example-col">
-      <kendo-textbox-container floatingLabel="Going To">
-        <input kendoTextBox formControlName="second_name" />
-      </kendo-textbox-container>
+        <label>
+          Leaving To:
+        <input kendoTextBox formControlName="leavingTo" required/>
+        </label>
     </div>
     <div class=" col-xs-12 col-sm-12 example-col">
       <label>
@@ -19,13 +21,13 @@
       <kendo-datepicker
         required
         [format]="format"
-        formControlName="checkIn"
+        formControlName="data"
         [min]="min"
       >
       </kendo-datepicker>
       </label>
     </div>
-    <div class=" col-xs-6 col-sm-6 example-col">
+    <div class=" col-xs-12 col-sm-12 example-col">
     <label>
       Time From:
       <kendo-timepicker
@@ -37,7 +39,7 @@
       ></kendo-timepicker>
     </label>
     </div>
-    <div class=" col-xs-6 col-sm-6 example-col">
+    <div class=" col-xs-12 col-sm-12 example-col">
       <label>
         Time To:
         <kendo-timepicker
@@ -50,18 +52,19 @@
       </label>
     </div>
 
-  <div class="col-xs-12 col-sm-12 example-col">
+  <!--<div class="col-xs-12 col-sm-12 example-col">
     <label>
       Passenger(s):
     <kendo-numerictextbox
-      formControlName="pas"
+      formControlName="passengers"
       [min] = '1'
       [max]="100"
       [autoCorrect]="true"
       [format]="'n0'"
+      required
     ></kendo-numerictextbox>
     </label>
-  </div>
+  </div>-->
 
   <div class="col-xs-12 col-sm-12 example-col">
     <button type="submit" class="btn btn-dark">Search</button>

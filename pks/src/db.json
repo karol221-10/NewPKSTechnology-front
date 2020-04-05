@@ -1,0 +1,48 @@
+{
+  "track": [
+    {
+      "id": 1,
+      "leavingFrom": "Kielce",
+      "leavingTo": "Krakow",
+      "data": "Fri May 01 2020",
+      "from": "",
+      "to": "",
+      "passengers": 20,
+      "numberOfStops": 3,
+      "travelTime": "10:15"
+    },
+    {
+      "id": 2,
+      "leavingFrom": "Kielce",
+      "leavingTo": "Warszawa",
+      "data": "Fri May 01 2020",
+      "from": "",
+      "to": "",
+      "passengers": 20,
+      "numberOfStops": 4,
+      "travelTime": "12:10"
+    },
+    {
+      "id": 3,
+      "leavingFrom": "Kielce",
+      "leavingTo": "Krakow",
+      "data": "Tue Apr 07 2020",
+      "from": "",
+      "to": "",
+      "passengers": 20,
+      "numberOfStops": 1,
+      "travelTime": "4:05"
+    },
+    {
+      "id": 4,
+      "leavingFrom": "Kielce",
+      "leavingTo": "Krakow",
+      "data": "Sun Apr 05 2020",
+      "from": "",
+      "to": "",
+      "passengers": 20,
+      "numberOfStops": 5,
+      "travelTime": "6:15"
+    }
+  ]
+}

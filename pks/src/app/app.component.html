@@ -40,7 +40,9 @@
     <article class="col1">
       <div class="pad_1">
         <h2>Your Planner</h2>
-        <app-search-form></app-search-form>
+        <app-search-form
+          (track) = "showResults($event)"
+        ></app-search-form>
         <h2>Rabaty</h2>
         <p>
           -10% for registered users!
@@ -48,6 +50,25 @@
         <div class="wrapper pad_bot2"><a href="#" class="button2">Read More</a></div>
       </div>
     </article>
+    <article class="col2 pad_left1" *ngIf="isLoaded">
+      <h2>{{data[0].leavingFrom}} - {{data[0].leavingTo}}</h2>
+      <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, sed.</p>-->
+      <kendo-grid [data]="data">
+        <kendo-grid-column field="id" title="ID" width="50px">
+        </kendo-grid-column>
+        <kendo-grid-column field="leavingFrom" title="From" >
+        </kendo-grid-column>
+        <kendo-grid-column field="leavingTo" title="To">
+        </kendo-grid-column>
+        <kendo-grid-column field="data" title="Data">
+        </kendo-grid-column>
+        <kendo-grid-column field="numberOfStops" title="Stops" width="70px">
+        </kendo-grid-column>
+        <kendo-grid-column field="travelTime" title="Travel Time" width="100px">
+        </kendo-grid-column>
+      </kendo-grid>
+</article>
+
 
 </section>
 <!-- / content -->
