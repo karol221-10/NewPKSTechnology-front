@@ -12,6 +12,8 @@ import {SearchFormComponent} from './main-page/search-form/search-form.component
 import {SearchService} from './shared/search.service';
 import {HttpClientModule} from '@angular/common/http';
 import {GridModule, SharedModule} from '@progress/kendo-angular-grid';
+import {AuthModule} from './auth/auth.module';
+import { HomePageComponent } from './main-page/home-page/home-page.component';
 
 
 
@@ -20,7 +22,8 @@ import {GridModule, SharedModule} from '@progress/kendo-angular-grid';
 @NgModule({
   declarations: [
     AppComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import {GridModule, SharedModule} from '@progress/kendo-angular-grid';
     DateInputsModule,
     HttpClientModule,
     SharedModule,
-    GridModule
+    GridModule,
+    AuthModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]

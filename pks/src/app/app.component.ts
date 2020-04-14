@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Track} from './main-page/search-form/track.model';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +6,11 @@ import {Track} from './main-page/search-form/track.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pks';
-  public data: Track;
-  isLoaded = false;
+
 
   constructor() {
   }
 
-  showResults(track) {
-    this.data = track;
-    console.log('test', this.data);
-    this.isLoaded = true;
-  }
 }
 
 
