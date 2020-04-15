@@ -37,7 +37,7 @@ export class SearchFormComponent implements OnInit {
   onSubmit() {
     const formData: Track = this.form.value;
     console.log(formData);
-    this.searchService.getTrack(formData).subscribe((track: Track[]) => {
+    this.searchService.getTrack(formData).subscribe((track) => {
       this.track.emit(track);
       console.log('return', track);
     });

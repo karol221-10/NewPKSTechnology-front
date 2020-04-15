@@ -9,7 +9,7 @@ import {Track} from '../search-form/track.model';
 export class HomePageComponent implements OnInit {
 
   title = 'pks';
-  public data: Track;
+  public data;
   isLoaded = false;
 
   constructor() {

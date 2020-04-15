@@ -52,10 +52,9 @@
     </article>
     <article class="col2 pad_left1" *ngIf="isLoaded">
       <h2>{{data[0].leavingFrom}} - {{data[0].leavingTo}}</h2>
-      <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, sed.</p>-->
       <kendo-grid [data]="data">
-        <kendo-grid-column field="id" title="ID" width="50px">
-        </kendo-grid-column>
+        <!--<kendo-grid-column field="id" title="ID" width="50px">
+        </kendo-grid-column>-->
         <kendo-grid-column field="leavingFrom" title="From" >
         </kendo-grid-column>
         <kendo-grid-column field="leavingTo" title="To">
@@ -66,6 +65,34 @@
         </kendo-grid-column>
         <kendo-grid-column field="travelTime" title="Travel Time" width="100px">
         </kendo-grid-column>
+
+        <ng-template kendoGridDetailTemplate let-dataItem>
+          <section *ngIf="dataItem" >
+            <div style="height: 4.5rem;">
+            <div class="sidebar-left">
+            <div class="row">
+              <div class="col-6">
+                <p><strong>From:</strong> {{dataItem.leavingFrom}} </p>
+              </div>
+              <div class="col-6">
+                <p><strong>Data:</strong> {{dataItem.data}} </p>
+              </div>
+              </div>
+            <div class="row">
+              <div class="col-6">
+                <p><strong>To:</strong> {{dataItem.leavingTo}} </p>
+              </div>
+              <div class="col-6">
+                <p><strong>Time:</strong> {{dataItem.time}} </p>
+              </div>
+            </div>
+              </div>
+            <div class="sidebar-right">
+              <button type="button" class="btn btn-dark btn-sm">Buy a ticket</button>
+            </div>
+              </div>
+          </section>
+        </ng-template>
       </kendo-grid>
     </article>
 

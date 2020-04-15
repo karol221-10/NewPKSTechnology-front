@@ -9,11 +9,13 @@ export class SearchService  {
   constructor(public httpClient: HttpClient) {
   }
 
-  getTrack(form: Track): Observable<Track[]> {
-    // const data = (form.data + '').slice(0, 15);
-    // console.log();
+  getTrack(form: Track): Observable<any[]> {
+    const timeFrom = (form.from.toTimeString()).slice(0, 5);
+    const timeTo = (form.to.toTimeString()).slice(0, 5);
+    console.log('form:', form);
+    // console.log(timeTo);
     // tslint:disable-next-line:max-line-length
-    return this.httpClient.get<Track[]>(`http://localhost:3000/track?leavingFrom=${form.leavingFrom}&leavingTo=${form.leavingTo}`);
+    return this.httpClient.get<any[]>(`http://localhost:3000/track?leavingFrom=${form.leavingFrom}&leavingTo=${form.leavingTo}`);
   }
 
 
