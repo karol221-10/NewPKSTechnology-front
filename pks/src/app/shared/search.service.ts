@@ -18,5 +18,9 @@ export class SearchService  {
     return this.httpClient.get<any[]>(`http://localhost:3000/track?leavingFrom=${form.leavingFrom}&leavingTo=${form.leavingTo}`);
   }
 
+  getTrackList(): Observable<any[]> {
+    return this.httpClient.get<any[]>(`http://localhost:3000/track`);
+  }
+
 
 }

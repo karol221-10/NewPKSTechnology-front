@@ -4,7 +4,15 @@
     <div class=" col-xs-12 col-sm-12 example-col">
       <label>
         Leaving From:
-        <input kendoTextBox formControlName="leavingFrom" required/>
+        <kendo-combobox
+          [data]="cityList"
+          [allowCustom]="false"
+          [placeholder]="'City name'"
+          [suggest]="true"
+          formControlName="leavingFrom"
+          required
+        >
+        </kendo-combobox>
       </label>
     </div>
 
@@ -12,17 +20,25 @@
     <div class=" col-xs-12 col-sm-12 example-col">
         <label>
           Leaving To:
-        <input kendoTextBox formControlName="leavingTo" required/>
+          <kendo-combobox
+            [data]="cityList"
+            [allowCustom]="false"
+            [placeholder]="'City name'"
+            [suggest]="true"
+            formControlName="leavingTo"
+            required
+          >
+          </kendo-combobox>
         </label>
     </div>
     <div class=" col-xs-12 col-sm-12 example-col">
       <label>
         Select Date:
       <kendo-datepicker
-        required
         [format]="format"
         formControlName="data"
         [min]="min"
+        required
       >
       </kendo-datepicker>
       </label>
