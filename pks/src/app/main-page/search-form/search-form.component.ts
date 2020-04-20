@@ -10,7 +10,7 @@ import {SearchService} from '../../shared/search.service';
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
-  @Output() track: EventEmitter<Track[]> = new EventEmitter<Track[]>();
+  @Output() track: EventEmitter<any[]> = new EventEmitter<any[]>();
   form: FormGroup;
   cityList: Array<string> = [];
   public min: Date;
@@ -50,7 +50,7 @@ export class SearchFormComponent implements OnInit {
     console.log(this.cityList);
     this.searchService.getTrack(formData).subscribe((track) => {
       this.track.emit(track);
-      console.log('return', track);
+      console.log('Return', track);
     });
   }
   }

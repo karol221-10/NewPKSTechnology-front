@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {GridModule, SharedModule} from '@progress/kendo-angular-grid';
 import {AuthModule} from './auth/auth.module';
 import { HomePageComponent } from './main-page/home-page/home-page.component';
+import { ResultPageComponent } from './main-page/result-page/result-page.component';
 
 
 
@@ -23,7 +24,8 @@ import { HomePageComponent } from './main-page/home-page/home-page.component';
   declarations: [
     AppComponent,
     SearchFormComponent,
-    HomePageComponent
+    HomePageComponent,
+    ResultPageComponent
   ],
   imports: [
     BrowserModule,

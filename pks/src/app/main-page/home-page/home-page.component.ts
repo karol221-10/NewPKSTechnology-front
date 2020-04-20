@@ -9,18 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
 
   title = 'pks';
-  public data;
-  isLoaded = false;
 
   constructor() {
   }
 
   ngOnInit() {
-  }
-
-  showResults(track) {
-    this.data = track;
-    console.log('test', this.data);
-    this.isLoaded = true;
   }
 }
