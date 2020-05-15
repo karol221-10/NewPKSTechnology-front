@@ -1,0 +1,7 @@
+@import '../../assets/vendor.css';
+@import '../../assets/theme.css';
+
+.back {
+  float:left;
+  color: #000000 !important;
+}

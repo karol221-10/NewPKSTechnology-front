@@ -1,0 +1,197 @@
+{
+  "track": [
+    {
+      "id": 1,
+      "leavingFrom": "Kielce",
+      "leavingTo": "Krakow",
+      "data": "Fri May 10 2020",
+      "time": "10:02",
+      "passengers": 20,
+      "numberOfStops": 3,
+      "stops": [
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        }
+      ],
+      "travelTime": "10:15"
+    },
+    {
+      "id": 2,
+      "leavingFrom": "Kielce",
+      "leavingTo": "Warszawa",
+      "data": "Fri May 10 2020",
+      "time": "12:02",
+      "passengers": 20,
+      "numberOfStops": 4,
+      "stops": [
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        }
+      ],
+      "travelTime": "12:10"
+    },
+    {
+      "id": 3,
+      "leavingFrom": "Kielce",
+      "leavingTo": "Krakow",
+      "data": "Fri May 10 2020",
+      "time": "08:02",
+      "passengers": 20,
+      "numberOfStops": 1,
+      "stops": [
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        }
+      ],
+      "travelTime": "4:05"
+    },
+    {
+      "id": 4,
+      "leavingFrom": "Kielce",
+      "leavingTo": "Krakow",
+      "data": "Fri May 10 2020",
+      "time": "12:02",
+      "passengers": 20,
+      "numberOfStops": 5,
+      "stops": [
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        }
+      ],
+      "travelTime": "6:15"
+    },
+    {
+      "id": 5,
+      "leavingFrom": "Kielce",
+      "leavingTo": "Krakow",
+      "data": "Fri May 10 2020",
+      "time": "12:02",
+      "passengers": 20,
+      "numberOfStops": 5,
+      "stops": [
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        },
+        {
+          "name": "Test",
+          "from": "12:45",
+          "to": "12:50"
+        }
+      ],
+      "travelTime": "6:15"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "asd@gmail.com",
+      "password": "12345678",
+      "position": "manager"
+    },
+    {
+      "id": 2,
+      "email": "qwe@gmail.com",
+      "password": "12345678",
+      "position": "admin"
+    }
+  ],
+  "city": [
+    {
+      "id": 1,
+      "name": "Kielce"
+    },
+    {
+      "id": 2,
+      "name": "Krakow"
+    },
+    {
+      "id": 3,
+      "name": "Warszawa"
+    }
+  ]
+}

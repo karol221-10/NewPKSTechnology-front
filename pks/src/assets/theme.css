@@ -3231,7 +3231,7 @@ pre {
 }
 
 .sidebar .nav > li.active > a, .sidebar .nav > li.active > a:hover {
-  background-color: #52bcd3 !important;
+  background-color: #007bff !important;
   color: #fff !important
 }
 

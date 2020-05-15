@@ -1,0 +1,41 @@
+<div class="title-block">
+
+  <h3 class="title pull-left">
+    City <span class="sparkline bar"></span>
+  </h3>
+
+  <mat-slide-toggle (change)="edit($event)" color="warn" class=" right pull-right" >Edit mode</mat-slide-toggle>
+</div>
+
+
+<section class="section">
+  <div class="row">
+      <div class="col col-xs-12 col-sm-4 col-md-4 col-xl-4 history-col">
+        <app-edit-city *ngIf="editMode"></app-edit-city>
+        <div *ngIf="!editMode" class="card">
+          <div class="card-block">
+            <div class="title-block">
+              <h4 class="title">City list</h4>
+            </div>
+            <div class="row row-sm stats-container">
+              <table class="table table-hover">
+                <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let i of city ">
+                  <td>{{ i.id }}</td>
+                  <td>{{ i.name }}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+

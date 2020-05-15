@@ -1,0 +1,21 @@
+<kendo-dialog *ngIf="active" (close)="closeForm()">
+  <kendo-dialog-titlebar>
+    {{ isNew ? 'Add new city' : 'Edit city' }}
+  </kendo-dialog-titlebar>
+
+  <form novalidate [formGroup]="editForm">
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="name" class="control-label">Name</label>
+          <input type="text" class="k-textbox" formControlName="name"/>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <kendo-dialog-actions>
+    <button class="k-button" (click)="onCancel($event)">Cancel</button>
+    <button class="k-button k-primary" [disabled]="!editForm.valid" (click)="onSave($event)">Save</button>
+  </kendo-dialog-actions>
+</kendo-dialog>

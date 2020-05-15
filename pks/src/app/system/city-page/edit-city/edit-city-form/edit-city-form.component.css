@@ -1,0 +1,7 @@
+@import '../../../../../../node_modules/@progress/kendo-theme-material/dist/all.css';
+
+input[type=text] { width: 100%; }
+
+.k-dialog-titlebar {
+  background-color: darkblue !important;
+}

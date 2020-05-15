@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormGroup, NgForm, FormControl} from '@angular/forms';
 import {Track} from './track.model';
-import {SearchService} from '../../shared/search.service';
+import {SearchService} from '../../shared/services/search.service';
 
 
 @Component({
