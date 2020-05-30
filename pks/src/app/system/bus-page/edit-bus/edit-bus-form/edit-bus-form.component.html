@@ -1,0 +1,83 @@
+<h1 mat-dialog-title>{{ data.isNew ? 'Add new bus' : 'Edit bus' }}</h1>
+<div mat-dialog-content>
+  <form novalidate [formGroup]="editForm">
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="registrationNumber" class="control-label">Registration</label>
+          <input type="text" class="k-textbox" formControlName="registrationNumber"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Technical inspection</h5>
+            <div class="form-group">
+              <label for="inspectionType" class="control-label">Type</label>
+              <input type="text" class="k-textbox" formControlName="inspectionType"/>
+            </div>
+            <div class="form-group">
+              <label for="inspectionCreationDate" class="control-label">Creation Date</label>
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker" formControlName="inspectionCreationDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker disabled="false"></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <label for="inspectionExpirationDate" class="control-label">Expiration Date</label>
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker2" formControlName="inspectionExpirationDate">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 disabled="false"></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <label for="inspectionComment" class="control-label">Comment</label>
+              <input type="text" class="k-textbox" formControlName="inspectionComment"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Insurance</h5>
+            <div class="form-group">
+              <label for="insuranceType" class="control-label">Type</label>
+              <input type="text" class="k-textbox" formControlName="insuranceType"/>
+            </div>
+            <div class="form-group">
+              <label for="insuranceCreationDate" class="control-label">Creation Date</label>
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker1" formControlName="insuranceCreationDate">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1 disabled="false"></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <label for="insuranceExpirationDate" class="control-label">Expiration Date</label>
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker3" formControlName="insuranceExpirationDate">
+                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                <mat-datepicker #picker3 disabled="false"></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <label for="insuranceComment" class="control-label">Comment</label>
+              <input type="text" class="k-textbox" formControlName="insuranceComment"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()" style="width: 49%">Cancel</button>
+  <button mat-button [disabled]="!editForm.valid" (click)="onSave()" style="width: 49%">Save</button>
+</div>
+
+

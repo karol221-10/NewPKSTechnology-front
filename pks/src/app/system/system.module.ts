@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { SharedModule } from '../shared/shared.module';
 import { SystemRoutingModule } from './system-routing.module';
 import { SystemComponent } from './system.component';
@@ -29,6 +28,16 @@ import {CityService} from './shared/services/city.service';
 import {MainService} from './shared/services/main.service';
 import { EditCityComponent } from './city-page/edit-city/edit-city.component';
 import { EditCityFormComponent } from './city-page/edit-city/edit-city-form/edit-city-form.component';
+import { BusPageComponent } from './bus-page/bus-page.component';
+import { EditBusComponent } from './bus-page/edit-bus/edit-bus.component';
+import { EditBusFormComponent } from './bus-page/edit-bus/edit-bus-form/edit-bus-form.component';
+import {BusService} from './shared/services/bus.service';
+import {MatButtonModule, MatCardModule, MatDatepickerModule, MatDialogModule, MatInputModule} from '@angular/material';
+import {MatFormFieldModule} from '@angular/material';
+import {DateInputsModule} from '@progress/kendo-angular-dateinputs';
+import {MatNativeDateModule} from '@angular/material/core';
+
+
 
 
 
@@ -58,6 +67,14 @@ import { EditCityFormComponent } from './city-page/edit-city/edit-city-form/edit
     HttpClientJsonpModule,
     MatSlideToggleModule,
     BodyModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    DateInputsModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatCardModule,
     //SharedModule
   ],
   declarations: [
@@ -69,7 +86,10 @@ import { EditCityFormComponent } from './city-page/edit-city/edit-city-form/edit
     SortPipe,
     CityPageComponent,
     EditCityComponent,
-    EditCityFormComponent
+    EditCityFormComponent,
+    BusPageComponent,
+    EditBusComponent,
+    EditBusFormComponent
   ],
   providers: [
     MainService,
@@ -77,7 +97,13 @@ import { EditCityFormComponent } from './city-page/edit-city/edit-city-form/edit
       deps: [HttpClient],
       provide: CityService,
       useFactory: (jsonp: HttpClient) => () => new CityService(jsonp)
+    },
+    {
+      deps: [HttpClient],
+      provide: BusService,
+      useFactory: (jsonp: HttpClient) => () => new BusService(jsonp)
     }
-  ]
+  ],
+  entryComponents: [EditBusFormComponent]
 })
 export class SystemModule {}

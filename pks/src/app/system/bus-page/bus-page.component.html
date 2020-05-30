@@ -1,0 +1,45 @@
+<div class="title-block">
+
+  <h3 class="title pull-left">
+    Bus <span class="sparkline bar"></span>
+  </h3>
+
+  <mat-slide-toggle (change)="edit($event)" color="warn" class=" right pull-right" >Edit mode</mat-slide-toggle>
+</div>
+
+
+<section class="section">
+  <div class="row">
+    <div class="col col-xs-12 col-sm-12 col-md-12 col-xl-9 history-col">
+      <app-edit-bus *ngIf="editMode"></app-edit-bus>
+      <div *ngIf="!editMode" class="card">
+        <div class="card-block">
+          <div class="title-block">
+            <h4 class="title">Bus list</h4>
+          </div>
+          <div class="row row-sm stats-container">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Technical inspection</th>
+                <th>Insurance</th>
+                <th>Registration</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let i of bus ">
+                <td>{{ i.id }}</td>
+                <td>{{ i.inspectionExpiry.expirationDate | date }}</td>
+                <td>{{ i.insuranceExpiry.expirationDate  | date}}</td>
+                <td>{{ i.registrationNumber }}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

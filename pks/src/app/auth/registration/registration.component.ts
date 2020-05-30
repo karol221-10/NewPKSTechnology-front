@@ -3,7 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
 import {UsersService} from '../../shared/services/users.service';
-import { User } from '../../shared/models/user.models';
+import { User } from '../../shared/models/user.model';
 
 
 @Component({
@@ -20,6 +20,8 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
+      'name': new FormControl(null, [Validators.required]),
+      'surname': new FormControl(null, [Validators.required]),
       'email': new FormControl(null, [Validators.required, Validators.email], this.sameEmails.bind(this)),
       'password': new FormControl(null, [Validators.required, Validators.minLength(8)]),
       'position': new FormControl(null, [Validators.required])
@@ -27,12 +29,12 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    const {email, password, position} = this.form.value;
-    const user = new User(email, password, position);
+    const {name, surname, email, password, position} = this.form.value;
+    const user = new User(name, surname, email, password, position);
 
     this.usersService.createNewUser(user)
       .subscribe(() => {
-        this.router.navigate(['/login'],
+        this.router.navigate(['/auth/login'],
           {queryParams: {
               nowCanLogin: true
             }
@@ -40,7 +42,7 @@ export class RegistrationComponent implements OnInit {
       });
   }
 
-  sameEmails(control: FormControl): Promise<any>{
+  sameEmails(control: FormControl): Promise<any> {
     return new Promise((resolve, reject) => {
       this.usersService.getUserByEmail(control.value)
         .subscribe((user: User) => {

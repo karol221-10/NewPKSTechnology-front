@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {BaseApi} from '../../../shared/core/base-api';
 import {City} from '../models/city.model';
-
+import {Bus} from '../models/bus.model';
 
 @Injectable()
 export class MainService extends BaseApi {
@@ -13,6 +13,10 @@ export class MainService extends BaseApi {
 
   public getCity(): Observable<City[]> {
     return this.get('city');
+  }
+
+  public getBus(): Observable<Bus[]> {
+    return this.get('bus');
   }
 
 }

@@ -1,0 +1,5 @@
+@import '../../../../../node_modules/@progress/kendo-theme-material/dist/all.css';
+
+table {
+  width: 100%;
+}

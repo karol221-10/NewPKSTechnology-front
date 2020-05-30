@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { User } from '../../../../shared/models/user.models';
+import { User } from '../../../../shared/models/user.model';
 import { AuthService } from '../../../../shared/services/auth.service';
 
 
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.user = JSON.parse(window.localStorage.getItem('user'));
-    this.title = this.user.position.charAt(0).toUpperCase() + this.user.position.slice(1);
+    this.title = this.user.name;
   }
 
   onLogout() {

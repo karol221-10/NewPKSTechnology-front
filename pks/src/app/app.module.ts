@@ -17,7 +17,8 @@ import { ResultPageComponent } from './main-page/result-page/result-page.compone
 import {MainPageRoutingModule} from './main-page/main-page-routing.module';
 import {AuthService} from './shared/services/auth.service';
 import {SystemModule} from './system/system.module';
-
+import 'hammerjs';
+import {MatButtonModule, MatInputModule} from '@angular/material';
 
 
 
@@ -45,9 +46,12 @@ import {SystemModule} from './system/system.module';
     GridModule,
     AuthModule,
     MainPageRoutingModule,
-    SystemModule
+    SystemModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [SearchService, AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: []
 })
 export class AppModule { }

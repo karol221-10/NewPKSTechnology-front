@@ -1,0 +1,13 @@
+@import '../../../../../../node_modules/@progress/kendo-theme-material/dist/all.css';
+
+input[type=text], mat-form-field { width: 100%; }
+
+
+
+.k-dialog-titlebar {
+  background-color: darkblue !important;
+}
+
+.mat-datepicker-content {
+  z-index: 2000;
+}

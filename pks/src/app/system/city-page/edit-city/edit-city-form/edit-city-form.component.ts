@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {City} from '../../../shared/models/city.model';
 
 
@@ -13,7 +13,7 @@ export class EditCityFormComponent {
   public active = false;
   public editForm: FormGroup = new FormGroup({
     'id': new FormControl(),
-    'name': new FormControl()
+    'name': new FormControl('', Validators.required)
   });
 
   @Input() public isNew = false;
