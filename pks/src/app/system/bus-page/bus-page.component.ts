@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {MainService} from '../shared/services/main.service';
 import {Bus} from '../shared/models/bus.model';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-bus-page',

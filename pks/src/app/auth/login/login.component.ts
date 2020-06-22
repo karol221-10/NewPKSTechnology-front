@@ -41,27 +41,43 @@ export class LoginComponent implements OnInit {
 
     this.form = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),
-      'password': new FormControl(null, [Validators.required, Validators.minLength(8)])
+      'password': new FormControl(null, [Validators.required, Validators.minLength(7)])
     });
   }
 
   private showMessage(message: Message) {
     this.message = message;
-    window.setTimeout(() =>{
+    window.setTimeout(() => {
       this.message.text = '';
     }, 5000);
   }
 
   onSubmit() {
-    const formData = this.form.value;
+    const formData = {
+      login: this.form.value.email,
+      password: this.form.value.password
+    };
 
-    this.usersService.getUserByEmail(formData.email)
+    this.usersService.getUser(formData).then(
+      user => {
+        window.localStorage.setItem('User', JSON.stringify(user));
+        this.authService.login();
+        this.router.navigate(['/system', 'city']);
+      },
+      res => {
+        this.showMessage({
+          text: res.error.message,
+          type: 'danger'
+        });
+      });
+
+    /*this.usersService.getUserByEmail(formData.email)
       .subscribe((user: User) => {
         if (user) {
           if (user.password === formData.password) {
             // if (user.position === 'admin' || user.position === 'manager' ) {
               // this.message.text = 'Login ok!';
-              window.localStorage.setItem('user', JSON.stringify(user));
+              // window.localStorage.setItem('user', JSON.stringify(user));
               this.authService.login();
               this.router.navigate(['/system', 'city']);
             // }
@@ -76,6 +92,6 @@ export class LoginComponent implements OnInit {
             text: 'Error!',
             type: 'danger'});
         }
-      });
+      });*/
   }
 }

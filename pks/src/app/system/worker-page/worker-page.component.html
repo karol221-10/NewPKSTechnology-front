@@ -1,0 +1,33 @@
+<div class="title-block">
+  <h3 class="title pull-left">
+    Workers and Users<span class="sparkline bar"></span>
+  </h3>
+  <mat-slide-toggle color="warn" (change)="show($event)" class=" right pull-right" >Edit mode</mat-slide-toggle>
+</div>
+
+
+<mat-tab-group [hidden]="editMode" [selectedIndex]="selectedTab">
+  <mat-tab label="Workers">
+    <div class="col col-xs-12 col-sm-12 col-md-12 col-xl-12 history-col ">
+        <app-worker-card [workers]="workers"></app-worker-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Users">
+    <div class="col col-xs-12 col-sm-12 col-md-12 col-xl-12 history-col ">
+        <app-user-card [users]="users"></app-user-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+<mat-tab-group *ngIf="editMode">
+  <mat-tab label="Workers">
+    <div class="col col-xs-12 col-sm-12 col-md-12 col-xl-12 history-col ">
+      <app-edit-worker></app-edit-worker>
+    </div>
+  </mat-tab>
+  <mat-tab label="Users">
+    <div class="col col-xs-12 col-sm-12 col-md-12 col-xl-12 history-col ">
+      <app-edit-user></app-edit-user>
+    </div>
+  </mat-tab>
+</mat-tab-group>

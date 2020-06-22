@@ -30,8 +30,8 @@
               <tbody>
               <tr *ngFor="let i of bus ">
                 <td>{{ i.id }}</td>
-                <td>{{ i.inspectionExpiry.expirationDate | date }}</td>
-                <td>{{ i.insuranceExpiry.expirationDate  | date}}</td>
+                <td>{{ i.inspectionExpiry | date }}</td>
+                <td>{{ i.insuranceExpiry | date}}</td>
                 <td>{{ i.registrationNumber }}</td>
               </tr>
               </tbody>

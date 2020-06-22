@@ -36,6 +36,19 @@ import {MatButtonModule, MatCardModule, MatDatepickerModule, MatDialogModule, Ma
 import {MatFormFieldModule} from '@angular/material';
 import {DateInputsModule} from '@progress/kendo-angular-dateinputs';
 import {MatNativeDateModule} from '@angular/material/core';
+import { SchedulePageComponent } from './schedule-page/schedule-page.component';
+import { WorkerPageComponent } from './worker-page/worker-page.component';
+import { EditScheduleComponent } from './schedule-page/edit-schedule/edit-schedule.component';
+import { EditScheduleFormComponent } from './schedule-page/edit-schedule/edit-schedule-form/edit-schedule-form.component';
+import { WorkerCardComponent } from './worker-page/worker-card/worker-card.component';
+import { UserCardComponent } from './worker-page/user-card/user-card.component';
+import { EditWorkerComponent } from './worker-page/worker-card/edit-worker/edit-worker.component';
+import { EditWorkerFormComponent } from './worker-page/worker-card/edit-worker/edit-worker-form/edit-worker-form.component';
+import { EditUserComponent } from './worker-page/user-card/edit-user/edit-user.component';
+import { EditUserFormComponent } from './worker-page/user-card/edit-user/edit-user-form/edit-user-form.component';
+import {WorkerService} from './shared/services/worker.service';
+import {UserService} from './shared/services/user.service';
+import {CheckBoxModule} from '@progress/kendo-angular-inputs';
 
 
 
@@ -75,6 +88,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatDialogModule,
     MatButtonModule,
     MatCardModule,
+    CheckBoxModule,
     //SharedModule
   ],
   declarations: [
@@ -89,7 +103,17 @@ import {MatNativeDateModule} from '@angular/material/core';
     EditCityFormComponent,
     BusPageComponent,
     EditBusComponent,
-    EditBusFormComponent
+    EditBusFormComponent,
+    SchedulePageComponent,
+    WorkerPageComponent,
+    EditScheduleComponent,
+    EditScheduleFormComponent,
+    WorkerCardComponent,
+    UserCardComponent,
+    EditWorkerComponent,
+    EditWorkerFormComponent,
+    EditUserComponent,
+    EditUserFormComponent
   ],
   providers: [
     MainService,
@@ -102,6 +126,16 @@ import {MatNativeDateModule} from '@angular/material/core';
       deps: [HttpClient],
       provide: BusService,
       useFactory: (jsonp: HttpClient) => () => new BusService(jsonp)
+    },
+    {
+      deps: [HttpClient],
+      provide: WorkerService,
+      useFactory: (jsonp: HttpClient) => () => new WorkerService(jsonp)
+    },
+    {
+      deps: [HttpClient],
+      provide: UserService,
+      useFactory: (jsonp: HttpClient) => () => new UserService(jsonp)
     }
   ],
   entryComponents: [EditBusFormComponent]

@@ -1,0 +1,77 @@
+<article class="col2 pad_left1" *ngIf="isTicket">
+  <h2>Yor Ticket</h2>
+  <form  [formGroup]="form" (ngSubmit)="onSubmit()" >
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <label>
+            Source Town
+            <input matInput formControlName="sourceTownId">
+          </label>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <label>
+            Destination Town
+            <input matInput formControlName="destinationTownId" >
+          </label>
+        </mat-form-field>
+      </div>
+      <div class="w-100"></div>
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <label>
+            Arrival Date
+            <input matInput formControlName="arrivalDate" >
+          </label>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <label>
+            Departure Date
+            <input matInput formControlName="departureDate" >
+          </label>
+        </mat-form-field>
+      </div>
+      <div class="w-100"></div>
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <label>
+            Total Time
+            <input matInput formControlName="totalTimeSeconds" >
+          </label>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <label>
+            Total Distance
+            <input matInput formControlName="totalDistance" >
+          </label>
+        </mat-form-field>
+      </div>
+      <div class="w-100"></div>
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <label>
+            Number Of Stations
+            <input matInput formControlName="numberOfStations" >
+          </label>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <label>
+            Price($)
+            <input matInput formControlName="price" >
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-dark" (click)="send()">Submit</button>
+  </div>
+    </form>
+</article>

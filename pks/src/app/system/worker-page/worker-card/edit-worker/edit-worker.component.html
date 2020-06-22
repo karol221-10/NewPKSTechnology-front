@@ -1,0 +1,20 @@
+<kendo-grid
+  [data]="view"
+  [autoSize] = "true"
+  (add)="addHandler()"
+>
+  <ng-template kendoGridToolbarTemplate>
+    <button kendoGridAddCommand>Add new</button>
+  </ng-template>
+  <kendo-grid-column field="driverLicenseNumber" title="Driver License"></kendo-grid-column>
+  <kendo-grid-column field="email" title="Email / Login"></kendo-grid-column>
+  <kendo-grid-column field="name" title="Name"></kendo-grid-column>
+  <kendo-grid-column field="surname" title="Surname"></kendo-grid-column>
+  <kendo-grid-column field="personIdNumber" title="Person Id"></kendo-grid-column>
+  <kendo-grid-column field="pesel" title="PESEL"></kendo-grid-column>
+</kendo-grid>
+
+<app-edit-worker-form [model]="editDataItem" [isNew]="isNew"
+                            (save)="saveHandler($event)"
+                            (cancel)="cancelHandler()">
+</app-edit-worker-form>

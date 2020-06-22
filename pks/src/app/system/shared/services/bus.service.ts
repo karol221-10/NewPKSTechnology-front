@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import {BaseApi} from '../../../shared/core/base-api';
 import {Bus} from '../models/bus.model';
+import {Inspection} from '../models/inspection.model';
 
 
 
@@ -14,7 +15,8 @@ export class BusService extends BaseApi {
 
   private data: any[] = [];
 
-  public save(data: any, isNew?: boolean): Observable<Bus> {
+  public save(data: any, isNew?: boolean) {
+    console.log(data);
 
     this.reset();
 
@@ -27,8 +29,9 @@ export class BusService extends BaseApi {
   }
 
   public remove(data: any) {
+    console.log('remove', data);
     this.reset();
-    this.deleteBus(data).subscribe((x) => console.log(x), (x) => console.log(x));
+    return this.deleteBus(data).toPromise();
   }
 
   private reset() {
@@ -36,14 +39,30 @@ export class BusService extends BaseApi {
   }
 
   public deleteBus(data): Observable<Bus> {
-    return this.delete(`bus/${data.id}`);
+    this.deleteTest(`bus/${data.id}/insurance/1`);
+    this.deleteTest(`bus/${data.id}/inspection/1`);
+    return this.deleteTest(`bus/${data.id}`);
   }
 
-  public addBus(data): Observable<Bus> {
-    return this.post('bus', data);
+  public addBus(data: Bus): boolean {
+    const bus = Object.assign({}, {registrationNumber: data.registrationNumber}, {model: ''});
+    console.log(bus);
+    this.postTest('bus', bus).toPromise().then((x) => {
+      this.postTest(`bus/${x.id}/inspection`, data.inspectionExpiry).subscribe( q => console.log('inspection', q));
+      this.postTest(`bus/${x.id}/insurance`, data.insuranceExpiry).subscribe( q => console.log('insurance', q));
+    });
+    return true;
   }
 
   public updateBus(data): Observable<Bus> {
     return this.put(`bus/${data.id}`, data);
+  }
+
+  public getBusInspection(id): Promise<Inspection> {
+    return this.getTest(`bus/${id}/inspection`).toPromise();
+  }
+
+  public getBusInsurance(id): Promise<Inspection> {
+    return this.getTest(`bus/${id}/insurance`).toPromise();
   }
 }

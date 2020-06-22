@@ -40,7 +40,8 @@ export class CityService extends BaseApi {
   }
 
   public addCity(data): Observable<City> {
-    return this.post('city', data);
+    console.log(data);
+    return this.postTest('town', data);
   }
 
   public updateCity(data): Observable<City> {

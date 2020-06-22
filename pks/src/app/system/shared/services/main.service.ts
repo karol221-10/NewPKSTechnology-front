@@ -12,11 +12,26 @@ export class MainService extends BaseApi {
   }
 
   public getCity(): Observable<City[]> {
-    return this.get('city');
+    return this.getTest('town');
   }
 
   public getBus(): Observable<Bus[]> {
+    return this.getTest('bus');
+  }
+  public getEditBus(): Observable<Bus[]> {
     return this.get('bus');
+  }
+
+  public getWorker(): Observable<any> {
+    return this.getTest('workers');
+  }
+
+  public getUser(): Observable<any> {
+    return this.getTest('users');
+  }
+
+  public getSchedule() {
+    return this.getTest('schedule');
   }
 
 }

@@ -22,5 +22,9 @@ export class UsersService extends BaseApi {
     return this.post('users', user);
   }
 
+  getUser(user) {
+    return this.login(user);
+  }
+
 }
 

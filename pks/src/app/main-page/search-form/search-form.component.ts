@@ -12,9 +12,9 @@ import {SearchService} from '../../shared/services/search.service';
 export class SearchFormComponent implements OnInit {
   @Output() track: EventEmitter<any[]> = new EventEmitter<any[]>();
   form: FormGroup;
-  cityList: Array<string> = [];
+  cityList = [];
   public min: Date;
-  public max: Date = new Date(2000, 11, 31, 22);
+  public max: Date = new Date(2000, 11, 31, 23, 59);
   public format: any = 'dd/MM/yyyy';
   constructor(private searchService: SearchService) { }
 
@@ -31,16 +31,23 @@ export class SearchFormComponent implements OnInit {
     });
 
     const currentDay = new Date();
-    const nextDayNoon = new Date(currentDay.getFullYear(), currentDay.getMonth(), currentDay.getDate() + 1, 12);
+    const nextDayNoon = new Date(currentDay.getFullYear(), currentDay.getMonth(), currentDay.getDate(), 24);
 
     this.min = nextDayNoon;
   }
 
   private getUniqCityList() {
-    this.searchService.getTrackList().toPromise().then((tracks: Track[]) => {
+    /*this.searchService.getTrackList().toPromise().then((tracks: Track[]) => {
       tracks.forEach((track) => this.cityList.push(track.leavingFrom, track.leavingTo));
       this.cityList = Array.from(new Set(this.cityList)) as any;
+    });*/
+
+    this.searchService.getTrackList().toPromise().then((tracks) => {
+      tracks.forEach((track) => this.cityList.push(
+        {name: track.name, value: track.id}
+      ));
     });
+    console.log(this.cityList);
   }
 
 
@@ -49,8 +56,8 @@ export class SearchFormComponent implements OnInit {
     console.log(formData);
     console.log(this.cityList);
     this.searchService.getTrack(formData).subscribe((track) => {
-      this.track.emit(track);
-      console.log('Return', track);
+      this.track.emit(track.schedules);
+      console.log('Return', track.schedules);
     });
   }
   }

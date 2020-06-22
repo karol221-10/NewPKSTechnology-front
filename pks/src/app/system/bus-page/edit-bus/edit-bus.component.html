@@ -3,17 +3,21 @@
   [autoSize] = "true"
   (edit)="editHandler($event)" (remove)="removeHandler($event)"
   (add)="addHandler()"
+  [selectable]="true"
+  [kendoGridSelectBy]="'id'"
+  (selectedKeysChange)="test($event)"
+  (selectionChange)="test1($event)"
 >
   <ng-template kendoGridToolbarTemplate>
     <button kendoGridAddCommand >Add new</button>
   </ng-template>
   <kendo-grid-column field="id" title="ID" width="60px"></kendo-grid-column>
-  <kendo-grid-column field="inspectionExpiry.expirationDate" title="Technical inspection"></kendo-grid-column>
-  <kendo-grid-column field="insuranceExpiry.expirationDate" title="Insurance"></kendo-grid-column>
+  <kendo-grid-column field="inspectionExpiry" title="Technical inspection"></kendo-grid-column>
+  <kendo-grid-column field="insuranceExpiry" title="Insurance"></kendo-grid-column>
   <kendo-grid-column field="registrationNumber" title="Registration"></kendo-grid-column>
   <kendo-grid-command-column title="command" width="220">
     <ng-template kendoGridCellTemplate>
-      <button kendoGridEditCommand [primary]="true">Edit</button>
+      <!--<button kendoGridEditCommand [primary]="true">Edit</button>-->
       <button kendoGridRemoveCommand>Delete</button>
     </ng-template>
   </kendo-grid-command-column>

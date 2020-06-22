@@ -1,0 +1,94 @@
+<div class="title-block">
+
+  <h3 class="title pull-left">
+    Schedule <span class="sparkline bar"></span>
+  </h3>
+
+  <mat-slide-toggle (change)="edit($event)" color="warn" class=" right pull-right" >Edit mode</mat-slide-toggle>
+</div>
+
+
+<section class="section">
+  <div class="row">
+    <div class="col col-xs-12 col-sm-12 col-md-12 col-xl-9 history-col">
+      <app-edit-schedule *ngIf="editMode"></app-edit-schedule>
+
+      <kendo-grid
+        class=" no-border"
+        [data]="track"
+      >
+        <kendo-grid-column field="id" title="ID" >
+        </kendo-grid-column>
+        <kendo-grid-column field="busStops.length" title="Bus Stops">
+        </kendo-grid-column>
+        <kendo-grid-column field="totalDistance"  title="Total Distance">
+        </kendo-grid-column>
+        <kendo-grid-column field="totalTimeSeconds"  title="Total Time">
+        </kendo-grid-column>
+        <kendo-grid-column field="price"  title="Price">
+        </kendo-grid-column>
+
+
+        <ng-template kendoGridDetailTemplate let-dataItem>
+          <section *ngIf="dataItem" >
+            <div class="row align-items-center">
+              <div class="col-8">
+                <kendo-grid  [data]="dataItem.busStops">
+                  <kendo-grid-column field="townId" title="Name" >
+                  </kendo-grid-column>
+                  <kendo-grid-column field="arrivalDate" title="From" >
+                  </kendo-grid-column>
+                  <kendo-grid-column field="departureDate" title="To" >
+                  </kendo-grid-column>
+                </kendo-grid>
+              </div>
+              <div class="col-4">
+                <div class="row">
+                  <div class="col-12 d-flex align-items-center justify-content-center">
+                    <p><strong>Total number of stops:</strong> {{dataItem.busStops.length}} </p>
+                  </div>
+                  <div class="col-12 d-flex align-items-center justify-content-center">
+                    <p><strong>Total travel distance:</strong> {{dataItem.totalDistance}} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </ng-template>
+      </kendo-grid>
+      <!--<div *ngIf="!editMode" class="card">
+        <div class="card-block">
+          <div class="title-block">
+            <h4 class="title">Schedule list</h4>
+          </div>
+          <div class="row row-sm stats-container">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Bus ID</th>
+                <th>Worker ID</th>
+                <th>Bus Stops</th>
+                <th>Total Distance</th>
+                <th>Total Time</th>
+                <th>Price</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let i of track ">
+                <td>{{ i.id }}</td>
+                <td>{{ i.busId}}</td>
+                <td>{{ i.workerId}}</td>
+                <td>{{ i.busStops.length }}</td>
+                <td>{{ i.totalDistance}}</td>
+                <td>{{ i.totalTimeSeconds }}</td>
+                <td>{{ i.price }}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>-->
+    </div>
+  </div>
+</section>

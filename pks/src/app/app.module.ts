@@ -19,6 +19,7 @@ import {AuthService} from './shared/services/auth.service';
 import {SystemModule} from './system/system.module';
 import 'hammerjs';
 import {MatButtonModule, MatInputModule} from '@angular/material';
+import { TicketFormComponent } from './main-page/ticket-form/ticket-form.component';
 
 
 
@@ -28,7 +29,8 @@ import {MatButtonModule, MatInputModule} from '@angular/material';
     AppComponent,
     SearchFormComponent,
     HomePageComponent,
-    ResultPageComponent
+    ResultPageComponent,
+    TicketFormComponent
   ],
   imports: [
     BrowserModule,

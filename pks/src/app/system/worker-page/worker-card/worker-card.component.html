@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-block">
+    <div class="title-block">
+      <h4 class="title">Workers</h4>
+    </div>
+    <div class="row row-sm stats-container">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Driver License</th>
+          <th>Email / Login</th>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Person Id</th>
+          <th>PESEL</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let i of workers">
+          <td>{{ i.driverLicenseNumber}}</td>
+          <td>{{ i.email }}</td>
+          <td>{{ i.name}} </td>
+          <td>{{ i.surname}}</td>
+          <td>{{ i.personIdNumber}}</td>
+          <td>{{ i.pesel}} </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

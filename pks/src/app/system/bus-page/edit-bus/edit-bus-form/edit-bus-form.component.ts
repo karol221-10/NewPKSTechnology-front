@@ -36,11 +36,11 @@ export class EditBusFormComponent {
         'registrationNumber': data.value.registrationNumber,
         'inspectionType': data.value.inspectionExpiry.type,
         'inspectionCreationDate': new Date(data.value.inspectionExpiry.creationDate),
-        'inspectionExpirationDate': new Date(data.value.inspectionExpiry.expirationDate),
+        'inspectionExpirationDate': new Date(data.value.inspectionExpiry.expiryDate),
         'inspectionComment': data.value.inspectionExpiry.comment,
         'insuranceType': data.value.insuranceExpiry.type,
         'insuranceCreationDate': new Date(data.value.insuranceExpiry.creationDate),
-        'insuranceExpirationDate': new Date(data.value.insuranceExpiry.expirationDate),
+        'insuranceExpirationDate': new Date(data.value.insuranceExpiry.expiryDate),
         'insuranceComment': data.value.insuranceExpiry.comment
       });
     }

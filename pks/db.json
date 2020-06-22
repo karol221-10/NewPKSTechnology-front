@@ -4,8 +4,8 @@
       "id": 1,
       "leavingFrom": "Kielce",
       "leavingTo": "Krakow",
-      "data": "Fri May 10 2020",
-      "time": "10:02",
+      "data": "Sat Jun 20 2020",
+      "time": "12:50",
       "passengers": 20,
       "numberOfStops": 3,
       "stops": [
@@ -31,8 +31,8 @@
       "id": 2,
       "leavingFrom": "Kielce",
       "leavingTo": "Warszawa",
-      "data": "Fri May 10 2020",
-      "time": "12:02",
+      "data": "Sat Jun 20 2020",
+      "time": "16:02",
       "passengers": 20,
       "numberOfStops": 4,
       "stops": [
@@ -58,8 +58,8 @@
       "id": 3,
       "leavingFrom": "Kielce",
       "leavingTo": "Krakow",
-      "data": "Fri May 10 2020",
-      "time": "08:02",
+      "data": "Sat Jun 20 2020",
+      "time": "18:02",
       "passengers": 20,
       "numberOfStops": 1,
       "stops": [
@@ -85,7 +85,7 @@
       "id": 4,
       "leavingFrom": "Kielce",
       "leavingTo": "Krakow",
-      "data": "Fri May 10 2020",
+      "data": "Sat Jun 20 2020",
       "time": "12:02",
       "passengers": 20,
       "numberOfStops": 5,
@@ -112,7 +112,7 @@
       "id": 5,
       "leavingFrom": "Kielce",
       "leavingTo": "Krakow",
-      "data": "Fri May 10 2020",
+      "data": "Sat Jun 20 2020",
       "time": "12:02",
       "passengers": 20,
       "numberOfStops": 5,
@@ -212,6 +212,14 @@
     {
       "id": 3,
       "name": "Warszawa"
+    },
+    {
+      "id": 4,
+      "name": "qwe"
+    },
+    {
+      "id": 5,
+      "name": "qwe"
     }
   ],
   "bus": [
@@ -268,6 +276,29 @@
         "comment": "text"
       },
       "registrationNumber": "TKI303"
+    },
+    {
+      "id": 5,
+      "inspectionExpiry": {
+        "id": null,
+        "type": "asd",
+        "creationDate": "2020-06-11T22:00:00.000Z",
+        "expirationDate": "2020-06-18T22:00:00.000Z",
+        "comment": "asdas"
+      },
+      "insuranceExpiry": {
+        "id": null,
+        "type": "asd",
+        "creationDate": "2020-06-09T22:00:00.000Z",
+        "expirationDate": "2020-06-10T22:00:00.000Z",
+        "comment": "asd"
+      },
+      "registrationNumber": "asdasd"
+    },
+    {
+      "registrationNumber": "asdas",
+      "model": "",
+      "id": 7
     }
   ]
 }

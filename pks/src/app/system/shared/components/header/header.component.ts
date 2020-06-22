@@ -13,16 +13,16 @@ import { AuthService } from '../../../../shared/services/auth.service';
 export class HeaderComponent implements OnInit {
 
   date: Date = new Date();
-  user: User;
-  title: string;
+  // user: User;
+  // title: string;
 
   constructor(private authService: AuthService,
               private router: Router
   ) { }
 
   ngOnInit() {
-    this.user = JSON.parse(window.localStorage.getItem('user'));
-    this.title = this.user.name;
+    // this.user = JSON.parse(window.localStorage.getItem('user'));
+    // this.title = this.user.name;
   }
 
   onLogout() {

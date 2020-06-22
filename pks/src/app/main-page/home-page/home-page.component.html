@@ -50,7 +50,12 @@
         <div class="wrapper pad_bot2"><a href="#" class="button2">Read More</a></div>
       </div>
     </article>
-    <app-result-page #result></app-result-page>
+    <app-result-page (ticket)="ticket.start($event)" #result></app-result-page>
+    <app-ticket-form #ticket></app-ticket-form>
+    <div class="col2 pad_left1" *ngIf="qrReady">
+      <h2>Your Ticket in QRCode</h2>
+    <img src="data:image/jpeg;base64,{{this.qr}}">
+    </div>
   </section>
   <!-- / content -->
 </div>

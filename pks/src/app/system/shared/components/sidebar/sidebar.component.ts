@@ -8,14 +8,14 @@ import {User} from '../../../../shared/models/user.model';
 })
 export class SidebarComponent implements OnInit {
 
-  user: User;
-  title: string;
+  // user: User;
+  // title: string;
 
   constructor() { }
 
   ngOnInit() {
-    this.user = JSON.parse(window.localStorage.getItem('user'));
-    this.title = this.user.position.charAt(0).toUpperCase() + this.user.position.slice(1);
+    // this.user = JSON.parse(window.localStorage.getItem('user'));
+    // this.title = this.user.position.charAt(0).toUpperCase() + this.user.position.slice(1);
   }
 
 }
