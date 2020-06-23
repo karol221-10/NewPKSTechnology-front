@@ -6,7 +6,7 @@ import { UsersService } from '../../shared/services/users.service';
 import { User } from '../../shared/models/user.model';
 import { Message } from '../../shared/models/message.model';
 import {AuthService} from '../../shared/services/auth.service';
-
+import * as jwt_decode from 'jwt-decode';
 
 
 
@@ -62,7 +62,15 @@ export class LoginComponent implements OnInit {
       user => {
         window.localStorage.setItem('User', JSON.stringify(user));
         this.authService.login();
-        this.router.navigate(['/system', 'city']);
+        if (user.permissions === 'PERM_USER') {
+          this.router.navigate(['/home'],
+            {queryParams: {
+              logined: true
+            }
+          });
+        } else  {
+          this.router.navigate(['/system', 'city']);
+        }
       },
       res => {
         this.showMessage({

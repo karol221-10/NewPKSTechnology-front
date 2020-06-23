@@ -10,16 +10,16 @@
     </div>
     <nav class="menu">
       <ul class="nav metismenu">
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="!isWorker">
           <a [routerLink]="['/system','city']" > <i class="fas fa-city"></i> City </a>
         </li>
         <li routerLinkActive="active">
           <a [routerLink]="['/system','bus']" > <i class="fas fa-bus"></i> Bus </a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="!isWorker">
           <a [routerLink]="['/system','schedule']" > <i class="fas fa-clipboard-list"></i> Schedule </a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="!isWorker">
           <a [routerLink]="['/system','worker']" > <i class="fas fa-user-tie"></i> Worker </a>
         </li>
       </ul>
