@@ -57,6 +57,10 @@
     >
       Enter
     </button>
+       <form action="http://localhost:4444/signin/facebook" method="POST" #form>
+        <input type="hidden" name="scope" value="public_profile" />
+        <input type="submit" (click)="form.submit()" value="Login using Facebook"/>
+      </form>
   </div>
   <div class="form-group">
     <p class="text-muted text-xs-center">

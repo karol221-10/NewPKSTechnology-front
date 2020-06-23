@@ -5,11 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 import {AuthComponent} from './auth.component';
 import {LoginComponent} from './login/login.component';
 import {RegistrationComponent} from './registration/registration.component';
+import {FacebookloginComponent} from './facebooklogin/facebooklogin.component';
 
 const routes: Routes = [
   {path : 'auth', component: AuthComponent, children: [
        {path : 'login', component: LoginComponent},
-       {path : 'registration', component: RegistrationComponent}
+       {path : 'registration', component: RegistrationComponent},
+      {path: 'facebooklogin', component: FacebookloginComponent}
     ]}];
 
 @NgModule({
