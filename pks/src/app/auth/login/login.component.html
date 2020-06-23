@@ -57,11 +57,17 @@
     >
       Enter
     </button>
-       <form action="http://localhost:4444/signin/facebook" method="POST" #form>
-        <input type="hidden" name="scope" value="public_profile" />
-        <input type="submit" (click)="form.submit()" value="Login using Facebook"/>
-      </form>
   </div>
+  <form action="https://pksmanager.kompikownia.pl/signin/facebook" method="POST" #form2>
+    <input type="hidden" name="scope" value="public_profile" />
+    <button
+      type="submit"
+      class="btn btn-block btn-primary"
+      (click)="form2.submit()"
+    >
+      Login using Facebook
+    </button>
+  </form>
   <div class="form-group">
     <p class="text-muted text-xs-center">
       Haven't you have an account yet? <br><a [routerLink]="'/auth/registration'">
@@ -69,4 +75,5 @@
     </p>
   </div>
 </form>
+
 

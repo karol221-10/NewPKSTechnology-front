@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Bus} from '../shared/models/bus.model';
 import {Subscription} from 'rxjs';
 import {MainService} from '../shared/services/main.service';
+import {formatDate} from '@telerik/kendo-intl';
+import {SearchService} from '../../shared/services/search.service';
 
 @Component({
   selector: 'app-schedule-page',
@@ -15,12 +16,17 @@ export class SchedulePageComponent implements OnInit {
   isLoaded = false;
   editMode = false;
 
-  constructor(private mainService: MainService) { }
+  constructor(private mainService: MainService, private searchService: SearchService) { }
 
   ngOnInit() {
     this.sub1 = this.mainService.getSchedule()
       .subscribe(track => {
         console.log(track);
+        track.schedules.forEach(x => x.busStops.forEach(async q => {
+          q.townId = await this.toFormat(q.townId);
+          q.arrivalDate = formatDate(new Date(q.arrivalDate), 'g');
+          q.departureDate = formatDate(new Date(q.departureDate), 'g');
+        }));
         // tslint:disable-next-line:no-unused-expression
         track.schedules.totalTimeSeconds = this.formatSeconds(track.schedules.totalTimeSeconds);
         this.track = track.schedules;
@@ -45,6 +51,16 @@ export class SchedulePageComponent implements OnInit {
     const date = new Date(1970, 0, 1);
     date.setSeconds(seconds);
     return date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
+  }
+
+  async toFormat(id) {
+    // tslint:disable-next-line:radix use-isnan
+    if (isNaN(Number(id))) {
+      return id;
+    }
+    let result = null;
+    await this.searchService.getTrackById(id).then(x => result = x.name);
+    return result as string;
   }
 
 }
