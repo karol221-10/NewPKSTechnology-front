@@ -20,7 +20,7 @@ export class ResultPageComponent implements OnInit {
   }
 
   async showResults(track) {
-    console.log(track);
+    console.log(track, 'track');
     this.ticketData = new Object( track);
     track.forEach(x => x.busStops.forEach(async q => {
       q.townId = await this.toFormat(q.townId);
@@ -40,7 +40,7 @@ export class ResultPageComponent implements OnInit {
           scheduleId: track[0].id,
           sourceBusStopId: track[0].busStops[0].id
         }
-      }]; }, 1000
+      }]; }, 2000
     );
     console.log(this.data);
 

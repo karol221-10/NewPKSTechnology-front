@@ -20,6 +20,7 @@ import {SystemModule} from './system/system.module';
 import 'hammerjs';
 import {MatButtonModule, MatInputModule} from '@angular/material';
 import { TicketFormComponent } from './main-page/ticket-form/ticket-form.component';
+import {PDFExportModule} from '@progress/kendo-angular-pdf-export';
 
 
 
@@ -50,7 +51,8 @@ import { TicketFormComponent } from './main-page/ticket-form/ticket-form.compone
     MainPageRoutingModule,
     SystemModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    PDFExportModule
   ],
   providers: [SearchService, AuthService],
   bootstrap: [AppComponent],

@@ -14,7 +14,6 @@ export class SearchService extends BaseApi {
   }
 
   getTrack(form): Observable<any> {
-    debugger;
     const formatD = this.updateData(form.data).toJSON().slice(0, 10);
     const formatFrom = form.from.toJSON().slice(10, 24);
     const formatTo = form.to.toJSON().slice(10, 24);
@@ -25,8 +24,8 @@ export class SearchService extends BaseApi {
     const startTimeString = formatDate(startTime, 'yyyyMMddHHmmss', 'en-US');
     const endTimeString = formatDate(endTime, 'yyyyMMddHHmmss', 'en-US');
     console.log('form:', form);
-    console.log(startTime);
-    console.log(endTime);
+    console.log(startTimeString);
+    console.log(endTimeString);
     console.log(form.leavingFrom.value);
     // tslint:disable-next-line:max-line-length
     return this.getTest(`schedule?sourceTownId=${form.leavingFrom.value}&destinationTownId=${form.leavingTo.value}&startTime=${startTimeString}&endTime=${endTimeString}`);
@@ -48,13 +47,13 @@ export class SearchService extends BaseApi {
   postTicket(data) {
     const body = JSON.stringify(data);
     const headers = new HttpHeaders().set('content-type', 'application/json');
-    return this.httpClient.post('http://localhost:4444/api/ticket', body, {headers});
+    return this.httpClient.post('http://www.kompikownia.pl:4444/api/ticket', body, {headers});
   }
 
   setTicket(data) {
     const body = JSON.stringify(data);
     const headers = new HttpHeaders().set('content-type', 'application/json');
-    return this.httpClient.post('http://localhost:4444/api/ticket/complete', body , {headers});
+    return this.httpClient.post('http://www.kompikownia.pl:4444/api/ticket/complete', body , {headers});
   }
 
 

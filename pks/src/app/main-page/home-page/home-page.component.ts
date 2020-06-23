@@ -30,9 +30,14 @@ export class HomePageComponent implements OnInit {
           this.searchService.setTicket(body).toPromise().then((x: any) => {
             this.qr = x.qrCode;
             this.qrReady = true;
+
           });
         }
         console.log(this.qr);
       });
+  }
+
+  print(pdf) {
+    pdf.saveAs('Ticket.pdf');
   }
 }

@@ -57,7 +57,7 @@ export class SearchFormComponent implements OnInit {
     console.log(this.cityList);
     this.searchService.getTrack(formData).subscribe((track) => {
       this.track.emit(track.schedules);
-      console.log('Return', track.schedules);
+      console.log('Return', track);
     });
   }
   }

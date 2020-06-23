@@ -54,7 +54,11 @@
     <app-ticket-form #ticket></app-ticket-form>
     <div class="col2 pad_left1" *ngIf="qrReady">
       <h2>Your Ticket in QRCode</h2>
+      <button type="button" class="btn btn-sm btn-dark"  (click)="print(pdfTicket)">Save as PDF
+      </button>
+      <kendo-pdf-export #pdfTicket paperSize="A4" margin="5cm" [scale]="1" >
     <img src="data:image/jpeg;base64,{{this.qr}}">
+      </kendo-pdf-export>
     </div>
   </section>
   <!-- / content -->
