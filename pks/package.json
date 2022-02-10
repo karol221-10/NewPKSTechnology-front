@@ -68,7 +68,7 @@
     "moment": "^2.24.0",
     "ngx-cookie-service": "^3.0.4",
     "ngx-order-pipe": "^2.0.4",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "rxjs": "6.5.3",
     "tslib": "^1.10.0",
     "web-animations-js": "2.3.1",
